@@ -55,6 +55,6 @@
     <PackageReference Include="Flurl.Http" Version="3.0.0-pre3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Yose\Temporary\Trady\ImportApi\ImportApi.csproj" />
+    <ProjectReference Include="..\..\..\..\Working\ImportApi\ImportApi.csproj" />
   </ItemGroup>
 </Project>
