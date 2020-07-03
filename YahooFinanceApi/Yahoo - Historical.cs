@@ -84,11 +84,11 @@ namespace YahooFinanceApi
                     var (client, crumb) = await YahooClientFactory.GetClientAndCrumbAsync(reset, token).ConfigureAwait(false);
                     return await _GetResponseStreamAsync(client, crumb, token).ConfigureAwait(false);
                 }
-                catch (FlurlHttpException ex) when (ex.Call.Response?.StatusCode == HttpStatusCode.NotFound)
+                catch (FlurlHttpException ex) when (ex.Call.Response?.StatusCode == (int)HttpStatusCode.NotFound)
                 {
                     throw new Exception($"Invalid ticker or endpoint for symbol '{symbol}'.", ex);
                 }
-                catch (FlurlHttpException ex) when (ex.Call.Response?.StatusCode == HttpStatusCode.Unauthorized)
+                catch (FlurlHttpException ex) when (ex.Call.Response?.StatusCode == (int) HttpStatusCode.Unauthorized)
                 {
                     Debug.WriteLine("GetResponseStreamAsync: Unauthorized.");
 

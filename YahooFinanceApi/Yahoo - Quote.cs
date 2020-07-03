@@ -84,7 +84,7 @@ namespace YahooFinanceApi
             }
             catch (FlurlHttpException ex)
             {   
-                if (ex.Call.Response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                if (ex.Call.Response.StatusCode == (int)System.Net.HttpStatusCode.NotFound)
                     return new Dictionary<string, Security>(); // When there are no valid symbols
                 else throw;
             }
