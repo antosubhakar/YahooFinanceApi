@@ -54,9 +54,9 @@ namespace YahooFinanceApi.Tests
     [Fact]
     public async Task HistoricalSerializeTest()
     {
-      var candles = await Yahoo.GetHistoricalAsync("500002.BO", null, new DateTime(2022, 7, 2), Period.Daily);
+      var candles = await Yahoo.GetHistoricalAsync("MOTILALOFS.NS", null, new DateTime(2022, 7, 2), Period.Daily);
 
-      string fname = "TestOutput\\BSE_500002_EQ_EOD.xml";
+      string fname = "TestOutput\\NSE_MOTILALOFS_EQ_EOD.xml";
       string expected = Path.Combine(Path.GetDirectoryName(this.GetType().Assembly.GetAssemblyLocation()), fname);
       await candles.SaveAsync(expected);
     }
